@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Free classifieds in Pakistan, classified ads in Pakistan (For Sale in Pakistan, Vehicles in Pakistan, Real Estate in
+        Pakistan, Community in Pakistan,...)</title>
+
+        
+
+     <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="css/font-cdn.css">
+
+     <!-- Bootstrap Minfied CSS -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+ 
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+     <!-- <link rel="stylesheet" href="manifest.json"> -->
+       <script src="js/jquery.js"></script>    
+       <script src="js/bootstrap.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Firebase libraries -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA3bgH3nEl7RXq_toNfSceq7gxKnefvnnE",
+    authDomain: "olxapp-8ff51.firebaseapp.com",
+    databaseURL: "https://olxapp-8ff51.firebaseio.com",
+    projectId: "olxapp-8ff51",
+    storageBucket: "olxapp-8ff51.appspot.com",
+    messagingSenderId: "744595194731"
+  };
+  firebase.initializeApp(config);
+</script>  
+
+</head>
+
+<body class="">
+
+
+    <div id="innerLayout">
+            <header class="olx-contianer">
+                    <div class="olxTxt">
+                    <!-- <div class="wrapper clr rel"> -->
+                        <!-- <a href="olx-main.html" id="headerLogo" class="abs icon website big" title="OLX Pakistan - Sell and Buy on OLX.com.pk">OLX Pakistan - Sell and Buy on OLX.com.pk</a> -->
+                        <a href="olx-main.html" class="olx-icon"> <img src="img/olx-logo.png" alt="olx-logo"></a>
+                        <span >Pakistan's Largest Marketplace</span>
+                        </div>
+                        <!-- <div class="main-submitAccount"> -->
+
+                          <!-- <div class="submitAccount-cont ">
+                                <div class='account-container'> -->
+                                
+                                    <!-- <a href="" class='account-container'> <button type="button" class="btn btn-primary btn-lg custom-btn btn btn-success" onClick=signoutUser()>LogOut</button></a> -->
+                                        <!-- <a href="#" class="btn btn-info btn-lg">
+                                                <span class="glyphicon glyphicon-user"></span> User 
+                                              </a> -->
+                                    <!-- </div> -->
+                            <!-- <a id="postNewAdLink" class="postnewlink fbold tdnone" href="createAd.html"> -->
+                                <!-- <div> -->
+                                <!-- <a href="createAd.html"> <button type="button" class="btn btn-primary btn-lg custom-btn btn btn-success">Submit an Ad</button></a> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                               
+                    </header>
+
+
+        <section id="body-container">
+            <!-- <div class="wrapper"> -->
+                <!-- <div class="content clr rel"> -->
+                    <div class="main-container">
+                        <div class="signup-container ">
+                            <h2 class="signup-title" style="text-align: center">Submit An Ad</h2>
+                            <!-- <div class="accessbox bre3 br4 rel"> -->
+                                <!-- <div class="inner default access login margintop15"> -->
+                                    <fieldset class="rel">
+                                        <div class="fblock clr" id="emailDiv">
+                                            <div class="form-group">
+                                                <label for="title">Ad Title:</label>
+                                                <input type="text" class="form-control" id="title" placeholder="Enter your Ad Title...">
+                                            </div>
+                                            </div>
+                                            <br>
+                                            <div class="fblock clr" id="emailDiv">
+                                                    <div class="form-group">
+                                                        <label for="categories">Categories:</label>
+                                                        <select id="categories">
+                                                            <option value="vehicles">Vehicles</option>
+                                                            <option value="bikes">bikes</option>
+                                                            <option value="furniture">furniture</option>
+                                                            <option value="clothes">clothes</option>
+                                                            <option value="Animal">Animal</option>
+                                                            <option value="Mobile">Mobile</option>
+                                                            <option value="property for rent">property for rent</option>
+                                                            <option value="property for sale">property for sale</option>
+
+                                                          </select>
+                                                        <!-- <input type="text" class="form-control" id="categories" placeholder="Enter your categories..."> -->
+                                                    </div>
+                                                    </div>
+                                                    <br>
+
+                                            <div class="fblock clr" id="phoneDiv">
+                                                <div class="label fleft c000 fbold tright">
+                                                    <div>
+                                                        <label for="description">Description:</label>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="area clr">
+                                                    <div class="fleft rel focusbox smallshadow">
+                                                        <div class="form-group">
+                                                            <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="fblock clr" id="pass2Div">
+                                                    <div class="label fleft c000 fbold tright">
+    
+                                                        <label for="prize"> Prize:</label>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="area clr">
+                                                    <div class="fleft rel focusbox smallshadow">
+                                                        <input type="number" class="form-control" id="prize" placeholder="Enter your prize...">
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="fblock clr" id="pass1Div">
+                                                    <div class="label fleft c000 fbold tright">
+                                                        <!-- <div id="gallery" class="fblock clr" style="position: relative;"> -->
+                                                            <!-- <div class="fleft label rel tright"> -->
+                                                                <!-- <a name="photos"></a> -->
+                                                                <label class="validation fbold c000">Upload Photos</label>
+                                                            <!-- </div> -->
+                                                            <input type="file" class="form-control" id="gallery" onChange="encodeImageFileAsURL()">
+
+                                                        <!-- </div> -->
+                                                        <br>
+                                                    </div>
+                                                    <br>
+                                                   
+                                                </div>
+                                                <div class="fblock clr" id="pass2Div">
+                                                    <div class="label fleft c000 fbold tright">
+                                                        <label for="name">Name:</label>
+                                                        </label>
+                                                    </div>
+                                                    <br>
+                                                    <div class="area clr">
+                                                        <div class="fleft rel focusbox smallshadow">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="name" placeholder="Enter your name...">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="fblock clr" id="pass2Div">
+                                                    <div class="label fleft c000 fbold tright">
+
+                                                        <label for="model">Model:</label>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="area clr">
+                                                    <div class="fleft rel focusbox smallshadow">
+                                                        <input type="number" class="form-control" id="model" placeholder="Enter your model...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                            <div class="fblock clr" id="pass2Div">
+                                                <div class="label fleft c000 fbold tright">
+
+                                                    <label for="phoneCat">Phone No:</label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="area clr">
+                                                <div class="fleft rel focusbox smallshadow">
+                                                    <input type="number" class="form-control" id="phoneCat" placeholder="Enter your Phone No...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                       
+                            <div class="fblock">
+                                <div class="label fleft c000 fbold tright"></div>
+                                <div class="area clr margintop15">
+                                    <div class="form-group submit-btn">
+                                        <button class="btn btn-custom-dark" onClick="sumbitAd()">Submit</button>
+
+                                    </div>
+                                </div>
+                            </div>
+</div>
+                        </div>
+
+                        </fieldset>
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+ </section>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

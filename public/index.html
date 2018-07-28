@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Free classifieds in Pakistan, classified ads in Pakistan (For Sale in Pakistan, Vehicles in Pakistan, Real Estate in
+        Pakistan, Community in Pakistan,...)</title>
+
+        
+        
+        <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="css/font-cdn.css">
+
+    <!-- Bootstrap Minfied CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>    
+    <script src="js/bootstrap.min.js"></script>
+    
+
+
+    <!-- Firebase libraries -->
+
+  
+  
+  <link rel="manifest" href="manifest.json">
+   
+<!-- Firebase libraries -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA3bgH3nEl7RXq_toNfSceq7gxKnefvnnE",
+    authDomain: "olxapp-8ff51.firebaseapp.com",
+    databaseURL: "https://olxapp-8ff51.firebaseio.com",
+    projectId: "olxapp-8ff51",
+    storageBucket: "olxapp-8ff51.appspot.com",
+    messagingSenderId: "744595194731"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body class="homepage" onload="alreadylogin(),showAllAds()">
+
+
+    <!-- <div id="innerLayout"> -->
+            <header class="olx-contianer">
+                    <div class="olxTxt">
+                    <!-- <div class="wrapper clr rel"> -->
+                        <!-- <a href="olx-main.html" id="headerLogo" class="abs icon website big" title="OLX Pakistan - Sell and Buy on OLX.com.pk">OLX Pakistan - Sell and Buy on OLX.com.pk</a> -->
+                        <a href="index.html" class="olx-icon"> <img src="img/olx-logo.png" alt="olx-logo"></a>
+                        <span >Pakistan's Largest Marketplace</span>
+                        </div>
+                        <!-- <div class="main-submitAccount"> -->
+                          <div class="submitAccount-cont ">
+                                <div >
+                                
+                                    <a href="login.html" class='account-container'> <button type="button" class="btn btn-primary btn-lg custom-btn btn btn-success">My Account</button></a>
+                                        <!-- <a href="#" class="btn btn-info btn-lg">
+                                                <span class="glyphicon glyphicon-user"></span> User 
+                                              </a> -->
+                                    </div>
+                            <!-- <a id="postNewAdLink" class="postnewlink fbold tdnone" href="createAd.html"> -->
+                                <div>
+                                    <a href="#"> <button type="button" class="btn btn-primary btn-lg custom-btn btn btn-success" onClick="checkLogin()">Submit an Ad</button></a>
+                            </div>
+                            </div>
+                        <!-- </div> -->
+                               
+                    </header>
+
+        <nav class="navbar navbar-default nav-color searchDiv " id="nav" >
+            <div class="linkNav navbar navbar-inverse " >
+                <a href="javascript:void(0)" onClick='favouritAds()' > Favourite Ads </a>
+                <a href="javascript:void(0)" onClick=myAds()> My Ads </a>
+                
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"> Category </a>
+                    <!-- <button class="dropbtn">Dropdown</button> -->
+                    <div class="dropdown-content dropdown-link">
+                      <a href="javascript:void(0)" onClick="searchingFunc('vehicles')">Vehicles</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('bikes')">bikes</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('furniture')">furniture</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('clothes')">clothes</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('Animal')">Animal</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('Mobile')">Mobile</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('property for rent')">property for rent</a>
+                      <a href="javascript:void(0)" onClick="searchingFunc('property for sale')">property for sale</a>
+                    </div>
+                </div>
+                <a href="javascript:void(0)" onClick='chatPersonList()'> Messages</a>
+            </div>
+                <div class="fblock clr search-container">
+                        <!-- <div class="form-group"> -->
+                            <!-- <label for="categories">Categories:</label>
+                            <select id="search-category" class="s-btn" >
+                                <option value="vehicles">Vehicles</option>
+                                <option value="bikes">bikes</option>
+                                <option value="furniture">furniture</option>
+                                <option value="clothes">clothes</option>
+                                <option value="Animal">Animal</option>
+                                <option value="Mobile">Mobile</option>
+                                <option value="property for rent">property for rent</option>
+                                <option value="property for sale">property for sale</option>
+        
+                            </select> -->
+                                         <input type="text" id="searchAds" placeholder="Search ads..." size="30" >                            
+                            <button type="button" class="btn btn-search s-btn " onClick="searchByads()">Search</button> 
+                            <!-- <input type="text" class="form-control" id="categories" placeholder="Enter your categories..."> -->
+                        <!-- </div> -->
+                    </div>
+        
+             <!-- <div class="container navbar-container">
+                <input type="search"  class="form-control form-con2" id="user-search" placeholder="Search Add/Categories" >    
+            </div> -->
+                </nav>
+                <div id="container-popup">
+
+                </div>
+                <div id="ads" class="row">
+                        
+                </div>
+                
+                <div class="table-container">
+                
+                <div  class="user-list" id="usersChatRooms">
+                    <table >
+                                             
+                        <tr>
+                            <th>Ad title</th>
+                            <th>User name</th>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+           
+
+        <script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+
+

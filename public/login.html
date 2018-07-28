@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Free classifieds in Pakistan, classified ads in Pakistan (For Sale in Pakistan, Vehicles in Pakistan, Real Estate in
+        Pakistan, Community in Pakistan,...)</title>
+
+     <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="css/font-cdn.css">
+
+     <!-- Bootstrap Minfied CSS -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+ 
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+     <!-- <link rel="stylesheet" href="manifest.json"> -->
+       <script src="js/jquery.js"></script>    
+       <script src="js/bootstrap.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Firebase libraries -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA3bgH3nEl7RXq_toNfSceq7gxKnefvnnE",
+    authDomain: "olxapp-8ff51.firebaseapp.com",
+    databaseURL: "https://olxapp-8ff51.firebaseio.com",
+    projectId: "olxapp-8ff51",
+    storageBucket: "olxapp-8ff51.appspot.com",
+    messagingSenderId: "744595194731"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</head>
+
+<body class="accountview">
+
+
+    <div id="innerLayout">
+            <header class="olx-contianer">
+                    <div class="olxTxt">
+
+                    <!-- <div class="wrapper clr rel"> -->
+                        <!-- <a href="olx-main.html" id="headerLogo" class="abs icon website big" title="OLX Pakistan - Sell and Buy on OLX.com.pk">OLX Pakistan - Sell and Buy on OLX.com.pk</a> -->
+                        
+                        <a href="index.html" class="olx-icon"> <img src="img/olx-logo.png" alt="olx-logo"></a>
+                        <span >Pakistan's Largest Marketplace</span>
+                        </div>
+                        <!-- <div class="main-submitAccount"> -->
+                          <!-- <div class="submitAccount-cont ">
+                                <div class='account-container'>
+                                 -->
+                                        <!-- <span class="glyphicon glyphicon-user"></span><span>LogOut</span> -->
+                                        <!-- <a href="#" class="btn btn-info btn-lg">
+                                                <span class="glyphicon glyphicon-user"></span> User 
+                                              </a> -->
+                                    <!-- </div> -->
+                            <!-- <a id="postNewAdLink" class="postnewlink fbold tdnone" href="createAd.html"> -->
+                                <!-- <div> -->
+                                <!-- <button type="button" class="btn btn-primary btn-lg custom-btn btn btn-success">Submit an Ad</button> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                               
+                    </header>
+
+        <!-- class="accessbox bre3 br4 rel" -->
+        <section id="body-container" >
+            <!-- <div class="wrapper"> -->
+                <!-- <div class="content clr rel"> -->
+                    <div class="main-container">
+                        <div class="login-container">
+                            <h2 class="login-title" style="text-align: center">Log in</h2>
+                            <div  class="accessbox bre3 br4 rel login-container">
+                                <div class="inner default access login margintop15">
+                                    <fieldset class="rel">
+                                        <div class="fblock clr rel">
+                                            <div class="label fleft c000 fbold tright">
+                                                <label for="email">Email:</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="email" size="10" placeholder="Enter your email...">
+                                            </div>
+                                        </div>
+                                        <div class="fblock clr rel ">
+                                            <div class="label fleft c000 fbold tright">
+                                                <label for="password">Password:</label>
+                                            </div>
+                                            <div class="area clr">
+                                                <div class="form-group">
+
+                                                    <input type="password" class="form-control" id="password" placeholder="Enter your password...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fblock clr tcenter margintop7">
+                                            <div class="label fleft c000 fbold"></div>
+                                            <div class="area with-button">
+                                                <div class="form-group login-btn">
+                                                    <button class="btn btn-success " onClick="login()">Login</button>
+                                                    <div>Need a account?
+                                                        <a href="signup.html">Create Account</a>
+                                                    </div>
+                                                    <div class="error"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        </section>
+        <div class="error"></div>
+
+        <!-- <footer id="footer-container">
+            <div class="wrapper small" id="lastwrapper">
+                <div class="margintop15 clr rel">
+                    <div class="fleft">
+                        <p>
+                            <a href="https://www.olx.com.pk" class="tdnone" title="OLX.com.pk">
+                                <span class="icon websitegray inlblk vtop">&nbsp;</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="boxindent">
+                        <div class="clr">
+
+                            <div class="static box fleft">
+                                <ul class="small lheight16">
+                                    <li class="block">
+                                        <a href="https://www.olx.com.pk/terms/" class="link gray" title="Terms of Use">
+                                            <span>Terms of Use</span>
+                                        </a>
+                                    </li>
+                                    <li class="block">
+                                        <a href="https://help.olx.com.pk/" class="link gray" title="Help &AMP; Contact Us">
+                                            <span>Help &AMP; Contact Us</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            
+                            <div class="socialsbox fright">
+                                <h2>
+                                    <strong>Contact Us</strong>
+                                </h2>
+                                <div class="olxpk__contact__box--details">
+                                    <div class="email">
+                                        <span class="icon-email"></span>
+                                        <a href="mailto:help@olx.com.pk">help@olx.com.pk</a>
+                                    </div>
+                                    <div class="phone">
+                                        <span class="icon-phone"></span>
+                                        <strong>080010101</strong>
+                                        <small>(9:30am to 6:30pm)</small>
+                                    </div>
+                                    <div class="business-package">
+                                        <span class="icon-business-package"></span>
+                                        <strong>Business Packages</strong>
+                                        <small>(featured ads, advertising)</small>
+                                        <a href="https://bit.ly/olxsales" rel="noopener noreferrer" target="_blank">click here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer> -->
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
